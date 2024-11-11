@@ -92,3 +92,24 @@ window.addEventListener('scroll', function () {
 function backdropFilter() {
     document.getElementById("toastdiv").style.background = "transparent";
 }
+// Get elements
+const modal = document.getElementById("myModal");
+const openModalBtn = document.getElementById("openModalBtn");
+const closeBtn = document.getElementsByClassName("close-btn")[0];
+
+// Open the modal when the button is clicked
+openModalBtn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// Close the modal when the user clicks the close button
+closeBtn.onclick = function() {
+  modal.style.display = "none";
+}
+
+// Close the modal if the user clicks outside of the modal content
+window.onclick = function(event) {
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+}
